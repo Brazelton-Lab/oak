@@ -28,23 +28,23 @@ __email__ = 'theonehyer@gmail.com'
 __license__ = 'GPLv3'
 __maintainer__ = 'Alex Hyer'
 __status__ = 'Alpha'
-__version__ = '0.1.0a1'
+__version__ = '0.1.0a2'
 
 setup(name='oak',
-      version='0.1.0a1',
+      version='0.1.0a2',
       description='Ontological Annotation using Kegg',
       classifiers=[
           'Development Status :: 1 - Pre-production',  # Edit this?
           'Intended Audience :: End Users/Desktop',
           'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
           'Natural Language :: English',
-          'Operating System :: OS Independent', # Maybe?
+          'Operating System :: OS Independent',  # Maybe?
           'Programming Language :: Python :: 3.5',
-          'Topic :: Security'  # Change this
+          'Topic :: Scientific/Engineering :: Bio-Informatics'
       ],
       keywords='secure password generator',
       url='https://github.com/TheOneHyer/aspgen',
-      download_url='https://github.com/Brazelton-Lab/oak/tarball/0.1.0a1',
+      download_url='https://github.com/Brazelton-Lab/oak/tarball/0.1.0a2',
       author='Alex Hyer',
       author_email='theonehyer@gmail.com',
       license='GPLv3',
@@ -52,11 +52,10 @@ setup(name='oak',
           # Add packages
       ],
       include_package_data=True,
-      zip_safe=False,
       entry_points={
           # Add entry points
       },
       requires=[
-          # Add entry points
+          # Add required packages
       ]
       )
