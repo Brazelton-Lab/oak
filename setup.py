@@ -1,5 +1,7 @@
 #! /usr/bin/env python
 
+from __future__ import unicode_literals
+
 """Setup file to build and install oak
 
 Copyright:
@@ -21,6 +23,7 @@ Copyright:
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+from os.path import dirname, join
 from setuptools import setup
 
 __author__ = 'Alex Hyer'
@@ -28,10 +31,12 @@ __email__ = 'theonehyer@gmail.com'
 __license__ = 'GPLv3'
 __maintainer__ = 'Alex Hyer'
 __status__ = 'Alpha'
-__version__ = '0.1.0a2'
+
+with open(join(dirname(__file__), 'VERSION')) as version_file:
+    __version__ = version_file.read().strip()
 
 setup(name='oak',
-      version='0.1.0a2',
+      version=__version__,
       description='Ontological Annotation using Kegg',
       classifiers=[
           'Development Status :: 1 - Pre-production',  # Edit this?
@@ -42,14 +47,16 @@ setup(name='oak',
           'Programming Language :: Python :: 3.5',
           'Topic :: Scientific/Engineering :: Bio-Informatics'
       ],
-      keywords='secure password generator',
+      keywords='oak ontological annotation bioinformatics',
       url='https://github.com/TheOneHyer/aspgen',
-      download_url='https://github.com/Brazelton-Lab/oak/tarball/0.1.0a2',
+      download_url='https://github.com/Brazelton-Lab/oak/tarball/'
+                   '{0}'.format(__version__),
       author='Alex Hyer',
       author_email='theonehyer@gmail.com',
       license='GPLv3',
       packages=[
-          # Add packages
+          'bin',
+          'lib'
       ],
       include_package_data=True,
       entry_points={
