@@ -2,10 +2,10 @@
 
 from __future__ import unicode_literals
 
-"""Initializes bin package of OAK
+"""Executes when OAK.bin is imported
 
 Copyright:
-    __init__.py  Initialize bin package of OAK
+    __main__.py  Executes OAK
     Copyright (C) 2017  Alex Hyer
 
     This program is free software: you can redistribute it and/or modify
@@ -29,6 +29,17 @@ __maintainer__ = 'Alex Hyer'
 __status__ = 'Planning'
 
 from os.path import dirname, join
+import sys
 
 with open(join(dirname(__file__), 'VERSION')) as version_file:
     __version__ = version_file.read().strip()
+
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()
+
+    sys.exit(0)

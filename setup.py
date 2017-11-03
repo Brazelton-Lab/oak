@@ -32,7 +32,7 @@ __license__ = 'GPLv3'
 __maintainer__ = 'Alex Hyer'
 __status__ = 'Alpha'
 
-with open(join(dirname(__file__), 'VERSION')) as version_file:
+with open(join(dirname(__file__), 'bin', 'VERSION')) as version_file:
     __version__ = version_file.read().strip()
 
 setup(name='oak',
@@ -60,7 +60,9 @@ setup(name='oak',
       ],
       include_package_data=True,
       entry_points={
-          # Add entry points
+          'console_scripts': [
+              'oak = bin.__main__:main'
+          ]
       },
       requires=[
           # Add required packages
