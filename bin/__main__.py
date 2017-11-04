@@ -2,7 +2,10 @@
 
 from __future__ import unicode_literals
 
-"""Executes when OAK.bin is imported
+"""Executes OAK
+
+Commands:
+placeholder             placeholder description
 
 Copyright:
     __main__.py  Executes OAK
@@ -28,6 +31,7 @@ __license__ = 'GPLv3'
 __maintainer__ = 'Alex Hyer'
 __status__ = 'Planning'
 
+import argparse
 from os.path import dirname, join
 import sys
 
@@ -35,11 +39,24 @@ with open(join(dirname(__file__), 'VERSION')) as version_file:
     __version__ = version_file.read().strip()
 
 
-def main():
-    pass
+def main(arguments=None):
+    """OAK's main entry point: controls program flow
+
+    Args:
+        arguments (list): list of string to optionally pass to argparse
+    """
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.
+                                     RawDescriptionHelpFormatter)
+    parser.add_argument('--version',
+                        action='version',
+                        version=__version__)
+    if arguments is None:
+        args = parser.parse_args()  # Parse from sys.argv
+    else:
+        args = parser.parse_args(args=arguments)  # Parse from arguments list
 
 
 if __name__ == '__main__':
     main()
-
     sys.exit(0)
