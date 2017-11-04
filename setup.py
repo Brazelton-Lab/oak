@@ -55,13 +55,14 @@ setup(name='oak',
       author_email='theonehyer@gmail.com',
       license='GPLv3',
       packages=[
-          'bin',
-          'lib'
+          'oak',
+          'oak.bin',
+          'oak.lib'
       ],
       include_package_data=True,
       entry_points={
           'console_scripts': [
-              'oak = bin.__main__:main'
+              'oak = oak.bin.__main__:main'
           ]
       },
       requires=[

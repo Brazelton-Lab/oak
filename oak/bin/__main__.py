@@ -35,7 +35,7 @@ import argparse
 from os.path import dirname, join
 import sys
 
-with open(join(dirname(__file__), 'VERSION')) as version_file:
+with open(join(dirname(__file__), '..', 'VERSION')) as version_file:
     __version__ = version_file.read().strip()
 
 
