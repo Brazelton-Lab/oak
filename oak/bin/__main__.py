@@ -1,12 +1,25 @@
 #! /usr/bin/env python
 
-from __future__ import unicode_literals
-
 """Executes OAK
 
 Commands:
-placeholder             placeholder description
+placeholder
+"""
 
+from arandomness.argparse import CopyRight
+import argparse
+from pkg_resources import resource_string
+import sys
+
+__author__ = 'Alex Hyer'
+__email__ = 'theonehyer@gmail.com'
+__license__ = 'GPLv3'
+__maintainer__ = 'Alex Hyer'
+__status__ = 'Planning'
+__version__ = resource_string(__name__, '../VERSION').decode('ascii')
+
+# Obtain and store all copyright data
+copyRight = """
 Copyright:
     __main__.py  Executes OAK
     Copyright (C) 2017  Alex Hyer
@@ -25,18 +38,7 @@ Copyright:
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-__author__ = 'Alex Hyer'
-__email__ = 'theonehyer@gmail.com'
-__license__ = 'GPLv3'
-__maintainer__ = 'Alex Hyer'
-__status__ = 'Planning'
-
-import argparse
-from os.path import dirname, join
-import sys
-
-with open(join(dirname(__file__), '..', 'VERSION')) as version_file:
-    __version__ = version_file.read().strip()
+gplV3 = resource_string(__name__, '../../LICENSE').decode('ascii')
 
 
 def main(arguments=None):
@@ -48,6 +50,12 @@ def main(arguments=None):
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.
                                      RawDescriptionHelpFormatter)
+    parser.add_argument('--copyright',
+                        action=CopyRight,
+                        copyright_text=copyRight)
+    parser.add_argument('--copyright-full',
+                        action=CopyRight,
+                        copyright_text=gplV3)
     parser.add_argument('--version',
                         action='version',
                         version=__version__)

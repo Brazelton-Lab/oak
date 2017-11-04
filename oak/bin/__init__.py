@@ -1,7 +1,5 @@
 #! /usr/bin/env python
 
-from __future__ import unicode_literals
-
 """Initializes bin package of OAK
 
 Copyright:
@@ -22,13 +20,11 @@ Copyright:
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+from pkg_resources import resource_string
+
 __author__ = 'Alex Hyer'
 __email__ = 'theonehyer@gmail.com'
 __license__ = 'GPLv3'
 __maintainer__ = 'Alex Hyer'
 __status__ = 'Planning'
-
-from os.path import dirname, join
-
-with open(join(dirname(__file__), 'VERSION')) as version_file:
-    __version__ = version_file.read().strip()
+__version__ = resource_string(__name__, '../VERSION').decode('ascii')

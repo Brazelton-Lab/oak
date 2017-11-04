@@ -4,6 +4,11 @@ Changelog
 
 (unreleased)
 ------------
+- Changed Project Skeleton and added MANIFEST. [TheOneHyer]
+
+  All subpackages now under oak package with
+  metadata liek VERSION. MANIFEST.in now includes
+  any data in oak and children.
 - Added ArgParse Skeleton. [TheOneHyer]
 
   Added a way to parse arguments from sys.argv if no
